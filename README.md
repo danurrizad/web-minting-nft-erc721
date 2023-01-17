@@ -1,1 +1,1 @@
-#Web Minting NFT ERC721
+# Web Minting NFT ERC721
