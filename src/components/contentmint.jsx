@@ -1,9 +1,8 @@
-import React from 'react'
-import NFTimg from "../assets/img/image-nft.png"
+import React from 'react';
+import NFTimg from "../assets/img/image-nft.png";
 import Web3 from "web3"; 
 
 const contentmint = () => {
-  var account = document.getElementById('wallet-address').textContent;
     var contract = null;
     const ABI = [
       {
@@ -552,6 +551,7 @@ const contentmint = () => {
     const ADDRESS = "0x5CBFfc7c517165f5d4ef5638FdDEFAD7620Ab104";
     async function Minting() {
       if(window.ethereum){
+          var account = document.getElementById('wallet-address').textContent;
           var web3 = new Web3(window.ethereum);
           contract = new web3.eth.Contract(ABI, ADDRESS);
           contract.methods.safeMint(account).send({from:account,value:"25000000000000000"})
@@ -579,9 +579,9 @@ const contentmint = () => {
             <div class="justify-center flex py-2">
                 <img src={NFTimg} alt="nft-vrboy" class="w-1/4 border-dashed border-yellow-500 border-4"/>
             </div>
-            <div class="justify-center flex-1">
+            <div class="justify-center flex-1 text-center">
                 <h1 class="text-xl font-bold">Total Supply : <span id="total"></span>/6</h1>
-                <button class=" bg-emerald-200 px-2 py-1 border-2 rounded-2xl hover:bg-emerald-00" onClick={RefreshSupply}>Refresh supply</button>
+                <button class=" bg-slate-500 font-mono text-white border-2 border-white-solid py-1 px-4 rounded-3xl hover:bg-white hover:text-black" onClick={RefreshSupply}>Refresh supply</button>
             </div>
             <div class="justify-center flex">
                 <button id="mint" class="border-2 border-black p-2 bg-green-400 hover:bg-green-600 my-4" onClick={Minting}>Mint this NFT</button>
