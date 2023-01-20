@@ -60,11 +60,11 @@ const Contentmint = ({isConnected}) => {
             </div>
             <div class="justify-center flex-1 text-center">
                 <h1 class="text-xl font-bold">Total Supply : <span id="total"></span>/10</h1>
-                <button class=" bg-slate-500 font-mono text-white border-2 border-white-solid py-1 px-4 rounded-3xl hover:bg-white hover:text-black" onClick={RefreshSupply}>Refresh supply</button>
+                {isConnected ?  <button class=" bg-slate-500 font-mono text-white border-2 border-white-solid py-1 px-4 rounded-3xl hover:bg-white hover:text-black" onClick={RefreshSupply}>Refresh supply</button> : <span></span>}
                 <p class="animate-pulse text-green-600">{msg}</p>
             </div>
             <div class="justify-center flex-1">
-                {isConnected ? <button id="mint" class="border-2 border-black p-2 bg-green-400 hover:bg-green-600 my-4" onClick={Minting}>Mint this NFT</button> : <h2 class="text-black py-2 text-xl font-bold">You have to connect your wallet to mint</h2>}
+                {isConnected ? <button id="mint" class="border-2 border-black p-2 bg-green-400 hover:bg-green-600 my-4" onClick={Minting}>Mint this NFT</button> : <h2 class="text-black py-2 text-2xl font-bold">You have to connect your wallet to mint</h2>}
                 <p class="animate-pulse text-green-600">{msgMint}</p>
             </div>
         </div>
