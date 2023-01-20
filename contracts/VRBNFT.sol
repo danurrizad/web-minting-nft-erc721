@@ -16,10 +16,10 @@ contract VirtualRealityBoyNFTs is ERC721, ERC721Enumerable, ERC721URIStorage, Pa
     uint256 public MAX_SUPPLY = 6;
     uint256 public MINT_PRICE = 0.025 ether;
 
-    constructor() ERC721("Virtual-Reality Boys NFT", "VRNFT") {}
+    constructor() ERC721("Virtual Reality Boys V2 NFT", "VRBNFT") {}
 
     function _baseURI() internal pure override returns (string memory) {
-        return "ipfs://QmTGJzbX4VLbWmsmLRJab3v8zrJ5PNrTURUYcsyp79jVeW/";
+        return "ipfs://QmXvtwWe6yZPmH4sBaYv2rVC3voWMy2PfsbqeD9ytMmYzz/";
     }
 
     function pause() public onlyOwner {
